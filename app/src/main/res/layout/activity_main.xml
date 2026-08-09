@@ -8,6 +8,16 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/game_winner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/no_winner_yet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/round_winner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +31,8 @@
         android:id="@+id/rock_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:contentDescription="rock button"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
         android:src="@drawable/rock"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/paper_button"
@@ -34,6 +45,7 @@
         android:id="@+id/paper_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scissors_button"
         app:layout_constraintHorizontal_bias="0.5"
@@ -45,6 +57,7 @@
         android:id="@+id/scissors_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -74,32 +87,37 @@
         app:layout_constraintTop_toBottomOf="@+id/player_score" />
 
     <TextView
-        android:id="@+id/winner_banner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/no_winner_yet"
+        android:text="Computer Selected"
+        app:layout_constraintBottom_toTopOf="@+id/computer_choice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/computer_choice"
         android:layout_width="0dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Selected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_choice" />
+
     <ImageView
         android:id="@+id/player_choice"
         android:layout_width="0dp"
-        android:layout_height="170dp"
+        android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGuideline"
+        app:layout_constraintBottom_toTopOf="@+id/replay_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/computer_choice"
@@ -115,15 +133,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/replay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:text="Click to play again"
         app:layout_constraintBottom_toTopOf="@+id/buttonGuideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player_choice" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
